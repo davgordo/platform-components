@@ -7,6 +7,11 @@ metadata:
   namespace: keycloak
 spec:
   instances: 1
+  resources:
+    requests:
+      memory: 2Gi
+    limits:
+      memory: 4Gi
   hostname:
     hostname: "keycloak.{{ .Values.clusterRouterDomain }}"
   http:
