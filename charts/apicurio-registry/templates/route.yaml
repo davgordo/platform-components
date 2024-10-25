@@ -1,0 +1,19 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: registry
+  labels:
+    app: apicurioregistry-sql
+spec:
+  host: registry-apicurio-registry.apps.cluster-x5spj.x5spj.sandbox1870.opentlc.com
+  to:
+    kind: Service
+    name: apicurioregistry-sql-service
+    weight: 100
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
+  
